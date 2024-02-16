@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ok</title>
+<link rel="stylesheet" href="static/css/bootstrap.min.css">
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="static/style.css">
+<!------ Include the above in your HEAD tag ---------->
+<style>
+    .login-container{
+    margin-block-start: 5%;
+    margin-block-end: 5%;
+}
+.login-form-1{
+    padding: 5%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-1 h3{
+    text-align: center;
+    color: #333;
+}
+.login-form-2{
+    padding: 5%;
+    background: rgb(248, 212, 6);
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-2 h3{
+    text-align: center;
+    color: #fff;
+}
+.login-container form{
+    padding: 10%;
+}
+.btnSubmit
+{
+    inline-size: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+.login-form-1 .btnSubmit{
+    font-weight: 600;
+    color: #fff;
+    background-color: rgb(248, 212, 6);
+}
+.login-form-2 .btnSubmit{
+    font-weight: 600;
+    color: rgb(248, 212, 6);
+    background-color: #fff;
+}
+.login-form-2 .ForgetPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.login-form-1 .ForgetPwd{
+    color: rgb(248, 212, 6);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.hidden {
+ display:none;
+}
+.show{
+  display: block;
+}
+.theme{
+    background: skyblue !important;
+}
+
+</style>
+</head>
+<body>
+ 
+  
+    <form name="sendin" action="$(link-login-only)" method="post">
+      <input type="hidden" name="username" />
+      <input type="hidden" name="password" />
+      <input type="hidden" name="dst" value="https://google.com/" />
+      <input type="hidden" name="popup" value="true" />
+    </form>
+    <script type="text/javascript" src="md5.js"></script>
+    <script type="text/javascript">
+    
+      function doLogin() {
+      document.sendin.username.value = document.login.username.value;
+      document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+      
+      document.sendin.submit();
+      return false;
+      }
+    //-->
+    </script>
+  
+
+
+<div class="container login-container">
+            <div class="row">
+                <div class="col-md-6 login-form-1">
+                    <h3>Sign in to our WIFI</h3>
+
+                    <form name="login" action="$(link-login-only)" method="post"
+                    $(if chap-id) onSubmit="return doLogin()" $(endif)>
+                    <input type="hidden" name="dst" value="https://www.google.com/" />
+                    <input type="hidden" name="popup" value="true" />
+                    <div class="form-group">
+                      <label>Voucher (Mpesa Ref.No)</label>
+                      <input id="username" type="text"  class="form-control" name="username" >
+                      <input id="password" type="hidden"  class="form-control" value="Bitec" name="password">
+            
+                    <div class="row" style="margin-block-start:3%;">
+                      <div class="col-6 col-md-6 col-lg-6">
+                        <button id="btn-submit" type="submit"class="btn btn-success theme btn-block" style="color:#fffde7 !important;font-weight:800;font-size:16px;">Connect</button>
+                      </div>
+                      <div class="col-6 col-md-6  col-lg-6">
+                         <a class="btn btn-success theme btn-block" 
+                         style="color:#fffde7 !important;font-weight:800;font-size:16px;" 
+                        <a href="login.html"> Buy More.</a>
+                      </div>
+    
+                    </div>
+    
+                    <div class="row" style="margin-block-start: 5%;">
+
+                    <div class="col-xs-8">
+                      <a class="btn theme btn-sm" href="tel:+254795510388" 
+                      style="color:white;font-size:15px;inline-size:100%;"> Call
+                      +254795510388 for assistance
+                      </a>  
+                    </div>
+    
+                    </div>
+                  </form>
+    
+
+
+
+
+                </div>
+                <div class="col-md-6 login-form-2 theme" id="particles-js">
+                    <p class="card-text" style="color:white;inset-block-start: 150;"><a href="login.html">Powered by Bitec Networks</a></p>
+                </div>
+            </div>
+        </div>
+<script src="static/js/particles.min.js"></script>
+<script src="static/js/app.js"></script>
+<script>
+</script>
+</body>
+</html>
